@@ -1,3 +1,5 @@
+#include QMK_KEYBOARD_H
+
 enum layers {
 _QWERTY,
 _LOWER,
