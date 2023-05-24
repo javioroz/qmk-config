@@ -2,8 +2,7 @@
 
 enum layers {
 _QWERTY,
-_NIOP,
-_NEOP,
+_COLEMAK,
 _LOWER,
 _RAISE,
 _ADJUST
