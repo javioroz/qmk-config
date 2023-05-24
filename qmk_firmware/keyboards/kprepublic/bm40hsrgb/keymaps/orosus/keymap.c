@@ -10,8 +10,7 @@ _ADJUST
 };
 
 #define SW_DEF DF(_QWERTY)
-#define SW_NIOP DF(_NIOP)
-#define SW_NEOP DF(_NEOP)
+#define SW_COLEMAK DF(_COLEMAK)
 #define LOWER MO(_LOWER)
 #define RAISE MO(_RAISE)
 #define MS_UP KC_MS_UP
@@ -28,7 +27,7 @@ _ADJUST
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_QWERTY] = LAYOUT_planck_mit(
 // ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐ 
-// |   TAB   |    Q    |    W    |    E    |    R    |    T    |    Y    |    U    |    I    |    O    |    P    |   BKSP  |
+// |   TAB   |    Q    |    W    |    E    |    R    |    T    |    Y    |    U    |    I    |    O    |    P    |   BSPC  |
      KC_TAB,   KC_Q,    KC_W,     KC_E,      KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_BSPC,
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ 
 // |  DEL    |    A    |    S    |    D    |    F    |    G    |    H    |    J    |    K    |    L    |    ;    |    '    |
@@ -41,31 +40,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      KC_LCTL, KC_RALT,   KC_LGUI,  KC_LALT,  LOWER,         KC_SPC,        RAISE,    KC_LEFT,  KC_DOWN,   KC_UP,   KC_RGHT
 // └─────────┴─────────┴─────────┴─────────┴─────────┴───────────────────┴─────────┴─────────┴─────────┴─────────┴─────────┘
 ),
-[_NIOP] = LAYOUT_planck_mit(
+[_COLEMAK] = LAYOUT_planck_mit(
 // ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐ 
-// |   TAB   |    Q    |    W    |    D    |    F    |    G    |    Y    |    U    |    K    |    L    |    ;    |   BKSP  |
-     KC_TAB,   KC_Q,     KC_W,     KC_D,     KC_F,     KC_G,     KC_Y,     KC_U,     KC_K,     KC_L,     KC_SCLN,   KC_BSPC,
+// |   TAB   |    Q    |    W    |    F    |    P    |    G    |    J    |    L    |    U    |    Y    |    ;    |  BSCP   |
+     KC_TAB,   KC_Q,     KC_W,     KC_F,     KC_P,     KC_G,     KC_J,     KC_L,     KC_U,     KC_Y,     KC_SCLN,   KC_BSPC,
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ 
-// |  DEL    |    A    |    S    |    E    |    R    |    T    |    H    |    N    |    I    |    O    |    P    |    '    |
-     KC_DEL,   KC_A,     KC_S,     KC_E,     KC_R,     KC_T,     KC_H,     KC_N,     KC_I,     KC_O,     KC_P,     KC_QUOT,
+// |  DEL    |    A    |    R    |    S    |    T    |    D    |    H    |    N    |    E    |    I    |    O    |    '    |
+     KC_DEL,   KC_A,     KC_R,     KC_S,     KC_T,     KC_D,     KC_H,     KC_N,     KC_E,     KC_I,     KC_O,     KC_QUOT,
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ 
-// |  SHFT   |    Z    |    X    |    C    |    V    |    B    |    J    |    M    |    ,    |    .    |    /    |   ENT   |
-     KC_LSFT,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_J,     KC_M,    KC_COMM,   KC_DOT,   KC_SLSH,  KC_ENT ,
-// ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┴─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
-//    CTRL     CTRALT       WIN     ALT      LOWER          SPACE          RAISE       left     down      up       right   
-     KC_LCTL, KC_RALT,   KC_LGUI,  KC_LALT,  LOWER,       KC_SPC,          RAISE,   KC_LEFT,  KC_DOWN,   KC_UP,   KC_RGHT
-// └─────────┴─────────┴─────────┴─────────┴─────────┴───────────────────┴─────────┴─────────┴─────────┴─────────┴─────────┘
-),
-[_NEOP] = LAYOUT_planck_mit(
-// ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐ 
-// |   TAB   |    Q    |    W    |    D    |    F    |    K    |    Y    |    U    |    I    |    L    |    ;    |   BKSP  |
-     KC_TAB,   KC_Q,     KC_W,     KC_D,      KC_F,     KC_K,     KC_Y,     KC_U,     KC_I,     KC_L,    KC_SCLN,   KC_BSPC,
-// ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ 
-// |  DEL    |    A    |    S    |    T    |    R    |    G    |    H    |    N    |    E    |    O    |    P    |    '    |
-     KC_DEL,   KC_A,     KC_S,     KC_T,     KC_R,     KC_G,     KC_H,     KC_N,     KC_E,     KC_O,     KC_P,     KC_QUOT,
-// ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ 
-// |  SHFT   |    Z    |    X    |    C    |    V    |    B    |    J    |    M    |    ,    |    .    |    /    |   ENT   |
-     KC_LSFT,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_J,     KC_M,    KC_COMM,   KC_DOT,   KC_SLSH,  KC_ENT ,
+// |  SHFT   |    Z    |    X    |    C    |    V    |    B    |    K    |    M    |    ,    |    .    |    /    |   ENT   |
+     KC_LSFT,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_K,     KC_M,    KC_COMM,   KC_DOT,   KC_SLSH,  KC_ENT ,
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┴─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
 //    CTRL     CTRALT       WIN     ALT      LOWER          SPACE          RAISE       left     down      up       right   
      KC_LCTL, KC_RALT,   KC_LGUI,  KC_LALT,  LOWER,       KC_SPC,          RAISE,   KC_LEFT,  KC_DOWN,   KC_UP,   KC_RGHT
@@ -73,14 +57,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 [_LOWER] = LAYOUT_planck_mit(
 // ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐ 
-// |     `   |    1    |    2    |    3    |    4    |    5    |    6    |    7    |    8    |    9    |    0    |  Bksp   |
-     KC_GRV,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,     KC_9,     KC_0,    KC_BSPC,
+// |  ESC    |    1    |    2    |    3    | MousBtn1| MousBtn2|   Vol+  |   Prev  |    ↑    |  Next   |  Play   |         |
+     KC_ESC,   KC_1,     KC_2,     KC_3,   KC_MS_BTN1, KC_MS_BTN2, KC_VOLU, KC_MPRV,  KC_UP,   KC_MNXT,  KC_MPLY,  _______,
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ 
-// |  ESC    |    4    |    5    |    6    |    .    |    ,    |   Mute  |  Vol-   |   Up    |  Vol+   |    Ñ    |   "|"   |
-     KC_ESC,   KC_4,     KC_5,     KC_6,     KC_DOT,   KC_COMM,  KC_MUTE,  KC_VOLD,   KC_UP,   KC_VOLU,  ALGR(KC_N), KC_PIPE,
+// |         |    4    |    5    |    6    |    .    |    ,    |   Vol-  |    ←    |    ↓    |    →    |    Ñ    | Insert  |
+     _______,  KC_4,     KC_5,     KC_6,     KC_DOT,   KC_COMM,  KC_VOLD,  KC_LEFT,  KC_DOWN,  KC_RGHT,  ALGR(KC_N), KC_INS,
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ 
-// |         |    7    |    8    |    9    |    0    |    €    |  PScr   |   Left  |  Down   |  Right  | Insert  |         |
-     _______,  KC_7,     KC_8,     KC_9,     KC_0,  ALGR(KC_5),  KC_PSCR,  KC_LEFT, KC_DOWN,  KC_RGHT,   KC_INS,  _______,
+// |         |    7    |    8    |    9    |    0    |    €    |  Mute   | Mouse ← | Mouse ↓ | Mouse ↑ | Mouse → |         |
+     _______,  KC_7,     KC_8,     KC_9,     KC_0,  ALGR(KC_5),  KC_MUTE,   MS_LE,    MS_DO,    MS_UP,    MS_RI,   _______,
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┴─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ 
 // |         |         |         |         |         |                   |         |  Prev   |  Vol-   |  Vol+   |  Next   |
      _______,  _______,  _______,  _______,  _______,       _______,       _______, KC_MPRV,  KC_VOLD,   KC_VOLU,  KC_MNXT
@@ -88,14 +72,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 [_RAISE] = LAYOUT_planck_mit(
 // ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐ 
-// |    ~    |    !    |    @    |    #    |    $    |    %    |    ^    |    &    |    *    |    (    |    )    |  Bksp   |
-     KC_TILD,  KC_EXLM,  KC_AT,    KC_HASH,  KC_DLR,   KC_PERC,  KC_CIRC,  KC_AMPR,  KC_ASTR,  KC_LPRN,  KC_RPRN,  KC_BSPC,
+// |  ESC    |    !    |    @    |    #    |    $    |    %    |    ^    |    &    |    *    |    (    |    )    |         |
+     KC_ESC,   KC_EXLM,  KC_AT,    KC_HASH,  KC_DLR,   KC_PERC,  KC_CIRC,  KC_AMPR,  KC_ASTR,  KC_LPRN,  KC_RPRN,  _______,
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
-// |   Del   |   F1    |   F2    |   F3    |   F4    |   F5    |   F6    |    -    |    =    |    [    |    ]    |   \     | 
-     KC_DEL,   KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_MINS,   KC_EQL,   KC_LBRC,  KC_RBRC,  KC_BSLS,
+// |   F1    |   F2    |   F3    |   F4    |   F5    |   F6    |    `    |    -    |    =    |    [    |    ]    |   \     | 
+     KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_GRV,  KC_MINS,   KC_EQL,   KC_LBRC,  KC_RBRC,  KC_BSLS,
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ 
-// |         |   F7    |   F8    |   F9    |   F10   |   F11   |   F12   |    _    |    +    |    {    |    }    |         | 
-     _______,  KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,   KC_F12,   KC_UNDS,  KC_PLUS,  KC_LCBR,  KC_RCBR,  _______,
+// |   F7    |   F8    |   F9    |   F10   |   F11   |   F12   |    ~    |    _    |    +    |    {    |    }    |   "|"   | 
+     KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,   KC_F12,   KC_TILD, KC_UNDS,  KC_PLUS,  KC_LCBR,  KC_RCBR,  KC_PIPE,
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┴─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ 
 // |         |         |         |         |         |                   |         |  PScr   |  Mute   |  Stop   |  Play   |
      _______,  _______,  _______,  _______,  _______,      _______,        _______, KC_PSCR,  KC_MUTE,  KC_MSTP,  KC_MPLY
@@ -108,11 +92,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // |         |  Reset  |  Debug  |   RGB   |  RGBMOD |   HUE+  |   HUE-  |   SAT+  |   SAT-  |  BRGTH+ |  BRGTH- |  QWERTY |
      _______,  QK_BOOT,  DB_TOGG,  RGB_TOG,   RGB_MOD,  RGB_HUI,  RGB_HUD,  RGB_SAI,  RGB_SAD,  RGB_VAI,  RGB_VAD,  SW_DEF ,
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ 
-// |         |         |         |         |         |            Play   |  Prev   | mouseUp |  Next   |         |  ASERT  |
-     _______, _______, KC_MS_BTN1,  WH_UP, KC_MS_BTN2, _______,  KC_MPLY,  KC_MPRV,  MS_UP,   KC_MNXT,   _______,  SW_NIOP,
+// |         |         |         |         |         |            Play   |  Prev   | mouseUp |  Next   |         |         |
+     _______, _______, KC_MS_BTN1,  WH_UP, KC_MS_BTN2, _______,  KC_MPLY,  KC_MPRV,  MS_UP,   KC_MNXT,   _______,  _______,
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ 
 // |         |         |         |         |         |            Stop   | mouseLe | mouseUp | mouseRi |         | MINIMAK |
-     _______,  _______, _______,    WH_DO,   _______,  _______,  KC_MSTP,  MS_LE,    MS_DO,    MS_RI,   _______,   SW_NEOP, 
+     _______,  _______, _______,    WH_DO,   _______,  _______,  KC_MSTP,  MS_LE,    MS_DO,    MS_RI,   _______,   SW_COLEMAK, 
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┴─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ 
      RGB_TOG,  _______,  _______,  _______,  _______,       _______,       _______,  _______,  _______,  _______,  _______
 // └─────────┴─────────┴─────────┴─────────┴─────────┴───────────────────┴─────────┴─────────┴─────────┴─────────┴─────────┘
