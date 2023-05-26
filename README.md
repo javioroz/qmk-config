@@ -92,7 +92,7 @@ qmk json2c filename.json
 ## How to flash keyboard the first time
 Go to the path where the default keyboard is saved:
 ```bash
-$ cd /home/<user>/qmk_firmware/keyboards/krepublic/bm40hsrgb/keymaps/orosus_km
+$ cd /home/<user>/qmk_firmware/keyboards/kprepublic/bm40hsrgb/keymaps/orosus_km
 $ qmk compile
 ```
 Flash the keyboard, for that put the keyboard in RESET mode (Raise+Lower+Q) and run:
