@@ -8,8 +8,8 @@ _RAISE,
 _ADJUST
 };
 
-#define SW_COLEMAK DF(_COLEMAK)
-#define SW_QWERTY DF(_QWERTY)
+#define COLEMAK DF(_COLEMAK)
+#define QWERTY DF(_QWERTY)
 #define LOWER MO(_LOWER)
 #define RAISE MO(_RAISE)
 #define MS_UP KC_MS_UP
@@ -29,14 +29,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // |   TAB   |    Q    |    W    |    F    |    P    |    G    |    J    |    L    |    U    |    Y    |    ;    |  BSCP   |
      KC_TAB,   KC_Q,     KC_W,     KC_F,     KC_P,     KC_G,     KC_J,     KC_L,     KC_U,     KC_Y,     KC_SCLN,   KC_BSPC,
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ 
-// |  DEL    |    A    |    R    |    S    |    T    |    D    |    H    |    N    |    E    |    I    |    O    |    '    |
-     KC_DEL,   KC_A,     KC_R,     KC_S,     KC_T,     KC_D,     KC_H,     KC_N,     KC_E,     KC_I,     KC_O,     KC_QUOT,
+// |  BSP    |    A    |    R    |    S    |    T    |    D    |    H    |    N    |    E    |    I    |    O    |    '    |
+     KC_BSPC,   KC_A,     KC_R,     KC_S,     KC_T,     KC_D,     KC_H,     KC_N,     KC_E,     KC_I,     KC_O,     KC_QUOT,
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ 
 // |  SHFT   |    Z    |    X    |    C    |    V    |    B    |    K    |    M    |    ,    |    .    |    /    |   ENT   |
      KC_LSFT,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_K,     KC_M,    KC_COMM,   KC_DOT,   KC_SLSH,  KC_ENT ,
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┴─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
-//    CTRL       WIN      ALT        ENT      LOWER          SPACE          RAISE      SHFT      Vol-      Vol+     CTRALT  
-     KC_LCTL,  KC_LGUI,  KC_LALT,  KC_ENT,    LOWER,        KC_SPC,         RAISE,   KC_LSFT,  KC_VOLD,  KC_VOLU,   KC_RALT
+//    CTRL       WIN      ALT       LOWER     ENT           SPACE          SHFT      RAISE       DEL     CTRALT     CTRL
+     KC_LCTL,  KC_LGUI,  KC_LALT,  LOWER,    KC_ENT,        KC_SPC,        KC_LSFT,  RAISE,    KC_DEL,   KC_RALT,  KC_RCTL 
 // └─────────┴─────────┴─────────┴─────────┴─────────┴───────────────────┴─────────┴─────────┴─────────┴─────────┴─────────┘
 ),
 [_QWERTY] = LAYOUT_planck_mit(
@@ -44,14 +44,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // |   TAB   |    Q    |    W    |    E    |    R    |    T    |    Y    |    U    |    I    |    O    |    P    |   BSPC  |
      KC_TAB,   KC_Q,    KC_W,     KC_E,      KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_BSPC,
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ 
-// |  DEL    |    A    |    S    |    D    |    F    |    G    |    H    |    J    |    K    |    L    |    ;    |    '    |
-     KC_DEL,   KC_A,     KC_S,     KC_D,     KC_F,     KC_G,     KC_H,     KC_J,     KC_K,     KC_L,     KC_SCLN,  KC_QUOT,
+// |  BSPC   |    A    |    S    |    D    |    F    |    G    |    H    |    J    |    K    |    L    |    ;    |    '    |
+     KC_BSPC,   KC_A,     KC_S,     KC_D,     KC_F,     KC_G,     KC_H,     KC_J,     KC_K,     KC_L,     KC_SCLN,  KC_QUOT,
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ 
 // |  SHFT   |    Z    |    X    |    C    |    V    |    B    |    N    |    M    |    ,    |    .    |    /    |   ENT   |
      KC_LSFT,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_N,     KC_M,    KC_COMM,   KC_DOT,   KC_SLSH,  KC_ENT,
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┴─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
-//    CTRL       WIN      ALT        ENT      LOWER          SPACE          RAISE      SHFT      Vol-      Vol+     CTRALT  
-     KC_LCTL,  KC_LGUI,  KC_LALT,  KC_ENT,    LOWER,        KC_SPC,         RAISE,   KC_LSFT,  KC_VOLD,  KC_VOLU,   KC_RALT
+//    CTRL       WIN      ALT       LOWER     ENT           SPACE          SHFT      RAISE       DEL     CTRALT     CTRL
+     KC_LCTL,  KC_LGUI,  KC_LALT,  LOWER,    KC_ENT,        KC_SPC,        KC_LSFT,  RAISE,    KC_DEL,   KC_RALT,  KC_RCTL 
 // └─────────┴─────────┴─────────┴─────────┴─────────┴───────────────────┴─────────┴─────────┴─────────┴─────────┴─────────┘
 ),
 [_LOWER] = LAYOUT_planck_mit(
@@ -60,7 +60,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      KC_ESC,   KC_1,     KC_2,     KC_3,   KC_MS_BTN1, KC_MS_BTN2, KC_VOLU, KC_MPRV,  KC_UP,   KC_MNXT,  KC_MPLY,  _______,
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ 
 // |         |    4    |    5    |    6    |    .    |    ,    |   Vol-  |    ←    |    ↓    |    →    |    Ñ    | Insert  |
-     _______,  KC_4,     KC_5,     KC_6,     KC_DOT,   KC_COMM,  KC_VOLD,  KC_LEFT,  KC_DOWN,  KC_RGHT,  ALGR(KC_N), KC_INS,
+     KC_DEL,   KC_4,     KC_5,     KC_6,     KC_DOT,   KC_COMM,  KC_VOLD,  KC_LEFT,  KC_DOWN,  KC_RGHT,  ALGR(KC_N), KC_INS,
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ 
 // |         |    7    |    8    |    9    |    0    |    €    |  Mute   | Mouse ← | Mouse ↓ | Mouse ↑ | Mouse → |         |
      _______,  KC_7,     KC_8,     KC_9,     KC_0,  ALGR(KC_5),  KC_MUTE,   MS_LE,    MS_DO,    MS_UP,    MS_RI,   _______,
@@ -89,13 +89,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //  LOWER+RAISE                         v------------------------RGB CONTROL--------------------v
 // ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐ 
 // |         |  Reset  |  Debug  |   RGB   |  RGBMOD |   HUE+  |   HUE-  |   SAT+  |   SAT-  |  BRGTH+ |  BRGTH- |  QWERTY |
-     _______,  QK_BOOT,  DB_TOGG,  RGB_TOG,   RGB_MOD,  RGB_HUI,  RGB_HUD,  RGB_SAI,  RGB_SAD,  RGB_VAI,  RGB_VAD, SW_QWERTY,
+     _______,  QK_BOOT,  DB_TOGG,  RGB_TOG,   RGB_MOD,  RGB_HUI,  RGB_HUD,  RGB_SAI,  RGB_SAD,  RGB_VAI,  RGB_VAD, QWERTY,
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ 
 // |         |         |         |         |         |            Play   |  Prev   | mouseUp |  Next   |         |         |
      _______, _______, KC_MS_BTN1,  WH_UP, KC_MS_BTN2, _______,  KC_MPLY,  KC_MPRV,  MS_UP,   KC_MNXT,   _______,  _______,
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ 
 // |         |         |         |         |         |            Stop   | mouseLe | mouseUp | mouseRi |         | MINIMAK |
-     _______,  _______, _______,    WH_DO,   _______,  _______,  KC_MSTP,  MS_LE,    MS_DO,    MS_RI,   _______,   SW_COLEMAK, 
+     _______,  _______, _______,    WH_DO,   _______,  _______,  KC_MSTP,  MS_LE,    MS_DO,    MS_RI,   _______,   COLEMAK, 
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┴─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ 
      RGB_TOG,  _______,  _______,  _______,  _______,       _______,       _______,  _______,  _______,  _______,  _______
 // └─────────┴─────────┴─────────┴─────────┴─────────┴───────────────────┴─────────┴─────────┴─────────┴─────────┴─────────┘
